@@ -1,17 +1,20 @@
+import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
+
 import { Tabs } from "expo-router";
 import React from "react";
 
 const TabsLayout = () => {
+  const { colors } = useTheme();
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "red",
+        tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {
-          backgroundColor: "blue",
+          backgroundColor: colors.surface,
           borderTopWidth: 1,
-          borderTopColor: "yellow",
+          borderTopColor: colors.border,
           height: 90,
           paddingBottom: 30,
           paddingTop: 10,
@@ -23,6 +26,7 @@ const TabsLayout = () => {
         headerShown: false,
       }}
     >
+      {/* Question - name /  */}
       <Tabs.Screen
         name="index"
         options={{
